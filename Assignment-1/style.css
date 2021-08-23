@@ -81,6 +81,7 @@ a:hover{
     background-position: 50px;
     margin-bottom: 10px;
     background-color: balck;
+    cursor: pointer;
 }
 
 h1{
@@ -131,6 +132,15 @@ i{
     
 }
 
+#poster3{
+    background-image: url("./images/pic3.jpg");
+    background-size: 1010px;
+    background-repeat: no-repeat;
+    /* background-position: 100px; */
+    background-position-x: 130px;
+    background-position-y: 240px;
+}
+
 #poster3 .fa-apple {
     font-size: 50px;
 }
@@ -165,7 +175,7 @@ i{
     margin: 10px;
     padding: 20px;
     padding-top: 35px;
-   
+    cursor: pointer;
 }
 
 #box1{
