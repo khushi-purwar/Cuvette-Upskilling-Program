@@ -42,7 +42,7 @@ body{
 
 .navbar a{
     text-decoration: none;
-    color: #3882c7;
+    color: #75ACE3;
 }
 
 .nav-heading{
@@ -253,6 +253,36 @@ i{
     font-size: 24px;
 }
 /* section2 css ends */
+
+/* section3 css starts */
+
+.payment_info{
+    margin-top: 60px;
+   margin-bottom: 60px;
+}
+
+.image_container{
+    width: 24%;
+    margin: auto;
+}
+
+img{
+    width: 100%;
+}
+
+.pay_para{
+    font-size: 20px;
+}
+
+.pay_para sup{
+    font-size: 12px;
+}
+
+.payment_info .links{
+    font-size: 17px;
+}
+
+/* section3 css ends */
 
 /* footer css starts */
 
