@@ -52,7 +52,14 @@ input.addEventListener("keyup", function () {
       }
     }
     catch(err){
-      console.log("No keyword present in the search bar");
+      if(inputValue === ''){
+      row.innerHTML = "<h1 class='text-secondary'>No keyword present in the search bar!</h1>"
+      // console.log("No keyword present in the search bar");
+      }
+      else{
+        row.innerHTML = "<h1 class='text-secondary'>No data found!</h1>"
+        // console.log("No data found!")
+      }
     }
   }, 100);
 });
