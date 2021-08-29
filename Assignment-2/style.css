@@ -1,0 +1,37 @@
+
+body{
+  background-image: url("https://www.teahub.io/photos/full/202-2026930_3d-superheroes.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+ background-attachment: fixed;
+}
+
+ .list li{
+   list-style-type: none;
+   padding: 8px;
+   background-color: white;
+   cursor: pointer;
+ }
+
+ .list li:hover{
+     background-color: rgb(231, 229, 229);
+ }
+
+ .link{
+   text-decoration: none;
+   color: black;
+ }
+
+ input{
+   padding: 7px;
+   border-top-left-radius: 5px;
+   border-top-right-radius: 5px;
+   border: none;
+   padding-left: 14px;
+ }
+
+ input:focus{
+   outline: none;
+ }
+
+ 
