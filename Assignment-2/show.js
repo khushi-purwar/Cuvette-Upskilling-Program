@@ -19,7 +19,7 @@ async function showData(){
   <div class="row">
     <div class="col">
     <img src=${finalData.image.url} class="img-fluid p-2" alt="superhero" >
-    <a href="#/" class="btn btn-primary btn-lg ms-3 w-75 addToFav"  id=${finalData.id} onclick="favData.apply(this, arguments)" >+ Add to Favourites</a>
+    <a href="#/" class="btn btn-primary btn-lg ms-3 w-75 addToFav"  id=${finalData.id} onclick="favData.apply(this, arguments)" > <i class="fas fa-heart"></i> Add to Favourites</a>
 
     </div>
     <div class="col">
