@@ -50,3 +50,8 @@ function removeData(event) {
   let new_array = existing.filter((id) => id !== givenId);
   localStorage.setItem("fav", JSON.stringify(new_array));
 }
+
+const viewData = function(event){
+  const id = event.target.id;
+  window.sessionStorage.setItem('id' , id);
+};
