@@ -80,7 +80,7 @@ btn.addEventListener("click", async function () {
             <h5 class="card-title">${data.name}</h5>
            
             <a href="./show.html" class="btn btn-primary" id=${data.id}  onclick="viewData.apply(this, arguments)">View Details</a>
-            <a href="#/" class="btn btn-primary addToFav"  id=${data.id} onclick="favData.apply(this, arguments)">Add to Favourites</a>
+            <a href="#/" class="btn btn-primary ms-2 addToFav"  id=${data.id} onclick="favData.apply(this, arguments)">Add to Favourites</a>
           </div>
         </div>
         
