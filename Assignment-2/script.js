@@ -54,7 +54,7 @@ input.addEventListener("keyup", function () {
     catch(err){
       console.log("No keyword present in the search bar");
     }
-  }, 200);
+  }, 100);
 });
 
 const btn = document.querySelector(".searchBtn");
