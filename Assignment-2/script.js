@@ -24,30 +24,35 @@ input.addEventListener("keyup", function () {
     const list = document.querySelector("#list");
     list.innerHTML = "";
 
-    for (i = 0; i < finalData.length; i++) {
-      if (finalData[i].name.toLowerCase().includes(inputValue)) {
-
-        //  created <a> </a> tag
-        const link = document.createElement("a");
-        //  added href attribute to a tag
-        link.setAttribute("href", "./show.html"); 
-        //  added class to a tag
-        link.setAttribute("class", "link");
-
-        //  created li tag
-        const hero = document.createElement("li");
-        //  added class to li tag
-        hero.setAttribute("class", "list");
-          //  added id to li tag
-        hero.setAttribute('id', finalData[i].id);
-        // added function to li
-        hero.setAttribute('onclick', "clickData.apply(this, arguments)");
-
-        hero.innerHTML = finalData[i].name;
-        link.appendChild(hero)
-        list.appendChild(link); 
-
+    try{
+      for (i = 0; i < finalData.length; i++) {
+        if (finalData[i].name.toLowerCase().includes(inputValue)) {
+  
+          //  created <a> </a> tag
+          const link = document.createElement("a");
+          //  added href attribute to a tag
+          link.setAttribute("href", "./show.html"); 
+          //  added class to a tag
+          link.setAttribute("class", "link");
+  
+          //  created li tag
+          const hero = document.createElement("li");
+          //  added class to li tag
+          hero.setAttribute("class", "list");
+            //  added id to li tag
+          hero.setAttribute('id', finalData[i].id);
+          // added function to li
+          hero.setAttribute('onclick', "clickData.apply(this, arguments)");
+  
+          hero.innerHTML = finalData[i].name;
+          link.appendChild(hero)
+          list.appendChild(link); 
+  
+        }
       }
+    }
+    catch(err){
+      console.log("No keyword present in the search bar");
     }
   }, 200);
 });

@@ -6,10 +6,15 @@ body{
  background-attachment: fixed;
 }
 
+ol{
+  background-color: white;
+  border-bottom-left-radius: 5px;
+   border-bottom-right-radius: 5px;
+}
+
  .list li{
    list-style-type: none;
    padding: 8px;
-   background-color: white;
    cursor: pointer;
  }
 
@@ -23,11 +28,11 @@ body{
  }
 
  input{
-   padding: 7px;
+   padding: 9px;
    border-top-left-radius: 5px;
    border-top-right-radius: 5px;
    border: none;
-   padding-left: 14px;
+   padding-left: 38px;
  }
 
  input:focus{
