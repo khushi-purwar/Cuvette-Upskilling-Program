@@ -72,7 +72,7 @@ btn.addEventListener("click", async function () {
   finalData.map((data) => {
     const createNewCard = `
           
-          <div class="card mt-5" style="width: 21rem;" id=${data.id}>
+          <div class="card mt-1 " style="width: 21rem;" id=${data.id}>
           <img src=${
             data.image.url
           } class="card-img-top p-3" alt="..." height=300px">
