@@ -18,3 +18,11 @@
 `Live Link` : https://khushi-purwar.github.io/Cuvette-Upskilling-Program/Assignment-2
 
 `API Link` : https://superheroapi.com/
+
+
+### Assignment-3
+
+`Description` : [CRUD API's]()
+
+`Source Code` : https://github.com/khushi-purwar/Cuvette-Upskilling-Program/tree/master/Assignment-3
+
