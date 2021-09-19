@@ -1,68 +1,82 @@
 const jwt = require("jsonwebtoken");
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt");
 const shortid = require("shortid");
 
 // models
 const User = require("../../../models/user");
 
-exports.signup = (req, res) => {
-
-  User.findOne({ email: req.body.email }).exec(async (error, user) => {
+//  creating a user
+exports.signup = async (req, res) => {
+  try {
+    const user = await User.findOne({ email: req.body.email });
     if (user)
       return res.json({
-        message: "User already registered!",
+        message: "Customer already registered!",
       });
 
     const { firstName, lastName, email, password } = req.body;
 
-    const hash_password = await bcrypt.hash(password , 10)
+    const hash_password = await bcrypt.hash(password, 10);
 
-    const _user = new User({
+    const _user = await User.create({
       firstName,
       lastName,
       email,
       hash_password,
       username: shortid.generate(),
     });
-
-    _user.save((error, data) => {
-      if (error)
-        return res.status(400).json({ message: "Something went wrong!" });
-
-      if (data) {
-        return res
-          .status(200)
-          .json({ message: "User created successfully!", data: data });
-      }
-    });
-  });
+    return res
+      .status(200)
+      .json({ message: "Customer created successfully!", data: _user });
+  } catch (error) {
+    return res.status(400).json({ message: error.message });
+  }
 };
 
-exports.signin = (req, res) => {
-  User.findOne({ email: req.body.email }).exec(async (error, user) => {
-    if (error) return res.status(400).json({ error });
+// signing user
+exports.signin = async (req, res) => {
+  try {
+    const user = await User.findOne({ email: req.body.email });
+
     if (user) {
       const isPassword = await user.authenticate(req.body.password);
       if (isPassword) {
-        const token = jwt.sign({ _id: user._id , role: user.role}, process.env.SECRET_KEY, {
-          expiresIn: "1h",
-        });
+        // creating token
+        const token = jwt.sign(
+          { _id: user._id, role: user.role },
+          process.env.SECRET_KEY,
+          {
+            expiresIn: "1h",
+          }
+        );
+
         const { _id, firstName, lastName, role, email, fullName } = user;
-        res.cookie('token' , token , {expiresIn: "1h"});
-        res.status(200).json({
-          token,
-          user: { _id, firstName, lastName, role, email, fullName },
-        });
+        res.cookie("token", token, { expiresIn: "1h" });
+
+        res
+          .status(200)
+          .json({
+            token,
+            user: { _id, firstName, lastName, role, email, fullName },
+            message: "Customer signin succesfully!",
+          });
       } else {
         return res.status(400).json({ message: "Invalid Password!" });
       }
     } else {
-      return res.status(400).json({ message: "User does not exits!" });
+      return res.status(400).json({ message: "Customer does not exits!" });
     }
-  });
+  } catch (error) {
+    return res.status(400).json({ message: error.message });
+  }
 };
 
-exports.signout = (req,res)=>{
-  res.clearCookie('token');
-  res.status(200).json({message : "Signout successfully!"})
-}
+// signout user
+exports.signout = (req, res) => {
+  try {
+    res.clearCookie("token");
+    res.status(200).json({ message: "Signout successfully!" });
+  } catch (error) {
+    return res.status(400).json({ message: error.message });
+  }
+};
