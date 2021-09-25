@@ -1,4 +1,4 @@
-# Tasky Management App
+# Task Management App
 
 ## Features
 
