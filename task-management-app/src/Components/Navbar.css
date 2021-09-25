@@ -1,0 +1,42 @@
+.navbar{
+    background-color: #f1f1f1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+}
+
+.navbar p {
+    float: left;
+    text-decoration: none;
+}
+
+.navbar p.logo{
+    font-weight: 500;
+    font-size: 20px;
+    color: blue;
+}
+
+/* .navbar p:hover{
+    background-color: #ddd;
+    color: #5d6770;
+} */
+
+.navbar p.active{
+    background-color: dodgerblue;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.right-navbar{
+    display: flex;
+    gap: 40px;
+}
+
+.right-navbar p {
+    color: black;
+    font-size: 18px;
+    
+}
+
